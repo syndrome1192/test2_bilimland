@@ -85,15 +85,10 @@ export default {
       this.loading = false
     },
     delItem(){
-      let newArr = []
       for(let key in this.id){
-        for(let key_2 in this.data){
-          if(this.id[key] !== this.data[key_2].id){
-            newArr.push(this.data[key_2])
-          }
-        }
+       this.data = this.data.filter(uid => uid.id !== this.id[key])       
       }
-      this.data = newArr
+           
     },
     sorting(){
       let sorts;
